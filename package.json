@@ -1,0 +1,46 @@
+{
+  "name": "create-pnstack",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "Nguyen Pham",
+  "bin": {
+    "create-vite": "index.js",
+    "cva": "index.js"
+  },
+  "files": [
+    "index.js",
+    "templates/template-*",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "unbuild --stub && npm run start",
+    "build": "unbuild",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnstack/pnstack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pnstack/pnstackissues"
+  },
+  "homepage": "https://github.com/pnstack/pnstacktree/main/packages/create-vite#readme",
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "@types/minimist": "^1.2.2",
+    "@types/prompts": "^2.4.4",
+    "cross-spawn": "^7.0.3",
+    "kolorist": "^1.8.0",
+    "minimist": "^1.2.8",
+    "prompts": "^2.4.2"
+  },
+  "dependencies": {
+    "unbuild": "^1.2.1"
+  }
+}
