@@ -10,11 +10,8 @@ jobs:
     name: Generate Changelog
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: main
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
