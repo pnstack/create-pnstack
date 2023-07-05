@@ -1,16 +1,16 @@
 {
   "name": "create-pnstack",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "type": "module",
   "license": "MIT",
   "author": "Nguyen Pham",
   "bin": {
-    "create-vite": "index.js",
-    "cva": "index.js"
+    "create-pnstack": "index.js",
+    "pntool": "index.js"
   },
   "files": [
     "index.js",
-    "templates/template-*",
+    "templates",
     "dist"
   ],
   "scripts": {
@@ -25,12 +25,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pnstack/pnstack.git"
+    "url": "git+https://github.com/pnstack/pntool.git"
   },
   "bugs": {
-    "url": "https://github.com/pnstack/pnstack/issues"
+    "url": "https://github.com/pnstack/pntool/issues"
   },
-  "homepage": "https://github.com/pnstack/pnstack/tree/main/packages/create-vite#readme",
+  "homepage": "https://github.com/pnstack/pntool",
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",
     "@types/minimist": "^1.2.2",
