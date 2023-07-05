@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import * as glob from "glob";
 import { fileURLToPath } from "node:url";
 import spawn from "cross-spawn";
 import minimist from "minimist";
@@ -28,8 +29,6 @@ import {
   toValidPackageName,
 } from "./utils";
 
-// Avoids autoconversion to number of the project name by defining that the args
-// non associated with an option ( _ ) needs to be parsed as a string. See #4606
 const argv = minimist<{
   t?: string;
   template?: string;
@@ -186,9 +185,31 @@ async function init() {
     }
   };
 
-  const files = fs.readdirSync(templateDir);
+  const gitignore = fs.readFileSync(
+    path.join(templateDir, ".gitignore"),
+    "utf-8"
+  );
+  const ignorePatterns = gitignore
+    .split("\n")
+    .filter((pattern) => pattern.trim() !== "");
+
+
+  // const files = fs.readdirSync(templateDir);
+  
+  const files = glob.sync("**/*", {
+    cwd: templateDir,
+    dot: true,
+    nodir: true,
+    ignore: ignorePatterns,
+  });
+
+
   for (const file of files) {
-    write(file);
+    // write(file);
+    const src = path.join(templateDir, file);
+    const dest = path.join(root, file);
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.copyFileSync(src, dest);
   }
   const projectName = packageName || getProjectName();
 
