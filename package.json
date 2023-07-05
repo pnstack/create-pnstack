@@ -28,9 +28,9 @@
     "url": "git+https://github.com/pnstack/pnstack.git"
   },
   "bugs": {
-    "url": "https://github.com/pnstack/pnstackissues"
+    "url": "https://github.com/pnstack/pnstack/issues"
   },
-  "homepage": "https://github.com/pnstack/pnstacktree/main/packages/create-vite#readme",
+  "homepage": "https://github.com/pnstack/pnstack/tree/main/packages/create-vite#readme",
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",
     "@types/minimist": "^1.2.2",
