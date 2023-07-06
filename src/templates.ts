@@ -48,6 +48,11 @@ export const FRAMEWORKS: Framework[] = [
     color: cyan,
     variants: [
       {
+        name: "next-ts-tailwind",
+        display: "Nextjs Typescript TailwindCSS",
+        color: magenta,
+      },
+      {
         name: "nestjs-cli",
         display: "nestjs-cli ↗",
         color: magenta,
