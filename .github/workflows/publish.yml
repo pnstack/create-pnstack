@@ -13,14 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Update package.json
-        run: |
-          # Extract the version from the git tag (e.g., "v1.0.0")
-          version=$(echo "${{ github.ref }}" | sed -e 's/^refs\/tags\/v//')
-          
-          # Update the package.json version
-          npm version "$version"
-          
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -30,6 +22,14 @@ jobs:
         run: |
           git config user.name '${{secrets.MAINTAINER_NAME}}'
           git config user.email '${{secrets.MAINTAINER_EMAIL}}'
+
+      - name: Update package.json
+        run: |
+          # Extract the version from the git tag (e.g., "v1.0.0")
+          version=$(echo "${{ github.ref }}" | sed -e 's/^refs\/tags\/v//')
+          
+          # Update the package.json version
+          npm version "$version"
 
       - uses: pnpm/action-setup@v2
         name: Install pnpm
@@ -58,6 +58,8 @@ jobs:
       - name: Build nextjs pages
         run: pnpm run build
      
+
+
       - name: Publish
         run: |
           npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
