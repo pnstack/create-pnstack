@@ -27,9 +27,14 @@ jobs:
         run: |
           # Extract the version from the git tag (e.g., "v1.0.0")
           version=$(echo "${{ github.ref }}" | sed -e 's/^refs\/tags\/v//')
-          
-          # Update the package.json version
-          npm version "$version"
+
+          # Update the package.json version using Node.js script
+          node - <<EOF
+          const fs = require('fs');
+          const packageJson = JSON.parse(fs.readFileSync('package.json'));
+          packageJson.version = "$version";
+          fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
+          EOF
 
       - uses: pnpm/action-setup@v2
         name: Install pnpm
