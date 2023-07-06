@@ -13,6 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Update package.json
+        run: |
+          # Extract the version from the git tag (e.g., "v1.0.0")
+          version=$(echo "${{ github.ref }}" | sed -e 's/^refs\/tags\/v//')
+          
+          # Update the package.json version
+          npm version "$version"
+          
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
