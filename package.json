@@ -1,6 +1,6 @@
 {
   "name": "create-pnstack",
-  "version": "0.0.3-beta.3",
+  "version": "0.0.4",
   "type": "module",
   "license": "MIT",
   "author": "Nguyen Pham",
@@ -25,12 +25,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pnstack/pntool.git"
+    "url": "git+https://github.com/pnstack/create-pnstack.git"
   },
   "bugs": {
-    "url": "https://github.com/pnstack/pntool/issues"
+    "url": "https://github.com/pnstack/create-pnstack/issues"
   },
-  "homepage": "https://github.com/pnstack/pntool",
+  "homepage": "https://github.com/pnstack/create-pnstack",
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",
     "@types/minimist": "^1.2.2",

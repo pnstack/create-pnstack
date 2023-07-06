@@ -31,20 +31,40 @@ export type FrameworkVariant = {
 
 export const FRAMEWORKS: Framework[] = [
   {
-    name: "vanilla",
-    display: "Vanilla",
+    name: "base",
+    display: "base",
     color: yellow,
-    type: "node",
     variants: [
       {
-        name: "vanilla-ts",
-        display: "TypeScript",
+        name: "base-project",
+        display: "Base Project",
         color: blue,
       },
+    ],
+  },
+  {
+    name: "nestjs",
+    display: "NestJS",
+    color: cyan,
+    variants: [
       {
-        name: "vanilla",
-        display: "JavaScript",
-        color: yellow,
+        name: "nestjs-cli",
+        display: "nestjs-cli ↗",
+        color: magenta,
+        customCommand: "npx @nestjs/cli TARGET_DIR",
+      },
+    ],
+  },
+  {
+    name: "nextjs",
+    display: "NestJS",
+    color: magenta,
+    variants: [
+      {
+        name: "create-next-app",
+        display: "create-next-app ↗",
+        color: magenta,
+        customCommand: "npx create-next-app@latest TARGET_DIR",
       },
     ],
   },
