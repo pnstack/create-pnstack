@@ -48,6 +48,11 @@ export const FRAMEWORKS: Framework[] = [
     color: cyan,
     variants: [
       {
+        name: "nest-prisma",
+        display: "nest-prisma",
+        color: lightGreen,
+      },
+      {
         name: "nestjs-cli",
         display: "nestjs-cli ↗",
         color: magenta,

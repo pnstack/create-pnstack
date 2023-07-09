@@ -13,6 +13,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Pull all submodule
+        run: git submodule update --init --recursive
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -62,8 +65,6 @@ jobs:
 
       - name: Build nextjs pages
         run: pnpm run build
-     
-
 
       - name: Publish
         run: |
@@ -76,12 +77,3 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       
-      - name: Create Release Notes
-        uses: actions/github-script@v4.0.2
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            await github.request(`POST /repos/${{ github.repository }}/releases`, {
-              tag_name: "${{ github.ref }}",
-              generate_release_notes: true
-            });
