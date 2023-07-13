@@ -91,6 +91,18 @@ export const FRAMEWORKS: Framework[] = [
     ],
   },
   {
+    name: "svelte",
+    display: "svelte",
+    color: blue,
+    variants: [
+      {
+        name: "svelte-tailwind-ts",
+        display: "svelte-tailwind-ts",
+        color: blue,
+      },
+    ],
+  },
+  {
     name: "vite",
     display: "Vite",
     color: reset,
