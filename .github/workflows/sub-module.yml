@@ -37,6 +37,7 @@ jobs:
         run: |
           git add .
           git checkout -b sync-submodule
+          git pull origin sync-submodule
           git push --set-upstream origin sync-submodule
           gh pr create --title "Sync submodule" --body "Sync submodule" --base master --head sync-submodule --repo ${{ github.repository }}
 
