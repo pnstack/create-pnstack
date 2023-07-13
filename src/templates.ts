@@ -79,6 +79,18 @@ export const FRAMEWORKS: Framework[] = [
     ],
   },
   {
+    name: "node",
+    display: "node",
+    color: yellow,
+    variants: [
+      {
+        name: "node-typescript",
+        display: "node-typescript",
+        color: blue,
+      },
+    ],
+  },
+  {
     name: "vite",
     display: "Vite",
     color: reset,
