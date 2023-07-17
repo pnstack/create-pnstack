@@ -62,7 +62,7 @@ export const FRAMEWORKS: Framework[] = [
   },
   {
     name: "nextjs",
-    display: "NestJS",
+    display: "NextJS",
     color: magenta,
     variants: [
       {
