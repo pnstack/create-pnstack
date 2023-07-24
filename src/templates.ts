@@ -79,6 +79,18 @@ export const FRAMEWORKS: Framework[] = [
     ],
   },
   {
+    name: "docs",
+    display: "Documentation",
+    color: blue,
+    variants: [
+      {
+        name: "docusaurus",
+        display: "Docusaurus",
+        color: magenta,
+      },
+    ],
+  },
+  {
     name: "node",
     display: "node",
     color: yellow,
