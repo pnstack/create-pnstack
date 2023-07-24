@@ -6,8 +6,8 @@ on:
 name: Create Release
 
 jobs:
-  generate-changelog:
-    name: Generate Changelog
+  publish:
+    name: Publish Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

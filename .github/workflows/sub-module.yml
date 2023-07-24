@@ -1,44 +1,44 @@
-on:
-  push:
-    branches: ['master']
-  workflow_dispatch:
+# on:
+#   push:
+#     branches: ['master']
+#   workflow_dispatch:
 
-name: Sync Submodule
+# name: Sync Submodule
 
-env:
-    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# env:
+#     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-jobs:
-  sync-submodule:
-    name: Generate Changelog
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+# jobs:
+#   sync-submodule:
+#     name: Sync Submodule
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
 
-      - name: Pull all submodule
-        run: git submodule update --init --recursive
+#       - name: Pull all submodule
+#         run: git submodule update --init --recursive
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: "16"
 
-      - name: Setup Git
-        run: |
-          git config user.name '${{secrets.MAINTAINER_NAME}}'
-          git config user.email '${{secrets.MAINTAINER_EMAIL}}'
+#       - name: Setup Git
+#         run: |
+#           git config user.name '${{secrets.MAINTAINER_NAME}}'
+#           git config user.email '${{secrets.MAINTAINER_EMAIL}}'
 
-      - name: Sync submodule
-        run: |
-          git submodule update --remote --merge
+#       - name: Sync submodule
+#         run: |
+#           git submodule update --remote --merge
       
-      - name: Create pull request
-        run: |
-          git add .
-          git checkout -b sync-submodule
-          git config pull.rebase false
-          git pull origin sync-submodule
-          git push --set-upstream origin sync-submodule
-          gh pr create --title "Sync submodule" --body "Sync submodule" --base master --head sync-submodule --repo ${{ github.repository }}
+#       - name: Create pull request
+#         run: |
+#           git add .
+#           git checkout -b sync-submodule
+#           git config pull.rebase false
+#           git pull origin sync-submodule
+#           git push --set-upstream origin sync-submodule
+#           gh pr create --title "Sync submodule" --body "Sync submodule" --base master --head sync-submodule --repo ${{ github.repository }}
 
