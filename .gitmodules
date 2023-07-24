@@ -10,3 +10,6 @@ url = https://github.com/pnstack/template-node-typescript.git
 [submodule "templates/template-svelte-tailwind-ts"]
 path = "templates/template-svelte-tailwind-ts"
 url = https://github.com/pnstack/template-svelte-tailwind-ts.git
+[submodule "templates/template-docusaurus"]
+path = "templates/template-docusaurus"
+url = https://github.com/pnstack/template-docusaurus.git
