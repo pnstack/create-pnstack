@@ -2,6 +2,10 @@ on:
   push:
     branches: ['master']
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Sync Submodule"]
+    types:
+      - completed
 
 name: Test Release
 
