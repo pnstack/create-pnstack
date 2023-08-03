@@ -36,7 +36,7 @@ jobs:
           git push origin submodule-sync-${{ github.sha }}
 
   test:
-    needs: sync_submodules  
+    needs:  sync-submodule
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
