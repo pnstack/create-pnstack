@@ -62,7 +62,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build nextjs pages
+      - name: Build package
         run: pnpm run build
 
       - name: Publish
