@@ -1,12 +1,12 @@
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 name: Create Release
 
 jobs:
-  publish:
+  create-release:
     name: Publish Release
     runs-on: ubuntu-latest
     steps:
@@ -66,14 +66,11 @@ jobs:
       - name: Build nextjs pages
         run: pnpm run build
 
-      - name: Publish
-        run: |
-          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-          if [[ "${{ github.ref }}" == *"beta"* ]]; then
-            npm publish --tag beta
-          else
-            npm publish
-          fi
+      - uses: actions/create-release@v1
+        id: create_release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: true
