@@ -32,9 +32,9 @@
   },
   "homepage": "https://github.com/pnstack/create-pnstack",
   "devDependencies": {
-    "@types/cross-spawn": "^6.0.2",
-    "@types/minimist": "^1.2.2",
-    "@types/prompts": "^2.4.4",
+    "@types/cross-spawn": "^6.0.6",
+    "@types/minimist": "^1.2.5",
+    "@types/prompts": "^2.4.9",
     "cross-spawn": "^7.0.3",
     "kolorist": "^1.8.0",
     "minimist": "^1.2.8",
