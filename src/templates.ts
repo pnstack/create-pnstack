@@ -43,6 +43,18 @@ export const FRAMEWORKS: Framework[] = [
     ],
   },
   {
+    name: "nix",
+    display: "nix",
+    color: yellow,
+    variants: [
+      {
+        name: "nix-shell",
+        display: "nix shell",
+        color: blue,
+      },
+    ],
+  },
+  {
     name: "nestjs",
     display: "NestJS",
     color: cyan,
