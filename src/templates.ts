@@ -144,6 +144,31 @@ export const FRAMEWORKS: Framework[] = [
     ],
   },
   {
+    name: "rust",
+    display: "Rust",
+    color: red,
+    variants: [
+      {
+        name: "rust-cargo",
+        display: "Cargo New Project",
+        color: red,
+        customCommand: "cargo new TARGET_DIR",
+      },
+      {
+        name: "rust-actix",
+        display: "Actix Web Project",
+        color: lightRed,
+        customCommand: "cargo new TARGET_DIR && cd TARGET_DIR && cargo add actix-web",
+      },
+      {
+        name: "rust-rocket",
+        display: "Rocket Web Framework",
+        color: magenta,
+        customCommand: "cargo new TARGET_DIR && cd TARGET_DIR && cargo add rocket",
+      }
+    ],
+  },
+  {
     name: "vite",
     display: "Vite",
     color: reset,
