@@ -53,6 +53,12 @@ export const FRAMEWORKS: Framework[] = [
         color: lightGreen,
       },
       {
+        name: "nestjs-auth-service",
+        display: "nestjs-auth-service",
+        color: lightGreen,
+        customCommand: 'git clone https://github.com/pnstack/nestjs-auth-service.git TARGET_DIR'
+      },
+      {
         name: "nestjs-cli",
         display: "nestjs-cli ↗",
         color: magenta,
@@ -112,6 +118,29 @@ export const FRAMEWORKS: Framework[] = [
         display: "svelte-tailwind-ts",
         color: blue,
       },
+    ],
+  },
+  {
+    name: "python",
+    display: "Python",
+    color: blue,
+    variants: [
+      {
+        name: "python-fastapi",
+        display: "FastAPI Project",
+        color: lightGreen,
+      },
+      {
+        name: "python-flask",
+        display: "Flask Project",
+        color: cyan,
+      },
+      {
+        name: "python-django",
+        display: "Django Project",
+        color: green,
+        customCommand: "django-admin startproject TARGET_DIR",
+      }
     ],
   },
   {
